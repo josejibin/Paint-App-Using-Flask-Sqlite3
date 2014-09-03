@@ -12,6 +12,7 @@ app.config.from_object(__name__)
 app.config.update(dict(
    DATABASE=os.path.join(app.root_path,'gallery.db'),
    DEBUG=True,
+   SECRET_KEY='jibin jose',
    
   
 ))
@@ -51,6 +52,7 @@ def home():
 @app.route("/gallery/<imagename>",methods=["GET", "POST"])
 def LoadSaveImage(imagename=None):
   if request.method=="POST":	
+    print "in posts"
     db=get_db()
     db.execute('insert into images (title,img_data) values (?,?)',[request.form["pname"],request.form["pdata"]])
     db.commit()

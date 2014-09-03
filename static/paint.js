@@ -294,7 +294,7 @@ save.addEventListener('click',saveimage, false);//load button
       else{
         db=JSON.stringify(data);
         alert(db)
-        $.post("/"+imagename.value,{pname:imagename.value,pdata:db},function(data,status){alert("saved");});
+        $.post("/gallery/"+imagename.value,{pname:imagename.value,pdata:db},function(data,status){alert("saved");});
       }
     }
 
