@@ -1,0 +1,121 @@
+<!-- Home page of J's Panit-->
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Paint Application Using Canvas,js and flask">
+    <meta name="author" content="Jacob Jose">
+ 
+    <title>Home</title>
+ 
+    <!-- Bootstrap CSS file -->
+    <link href="{{ url_for('static', filename="bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename="paintapp.css") }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename="bootstrap/css/bootstrap-theme.min.css") }}" rel="stylesheet" />
+
+</head> 
+<body>
+<div class="container" id="bg" >
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">         
+    <div class="container">
+        
+    </div>
+    </header>
+
+<!-- body content: posts and side bar-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" >     
+              <div id="toolbox" >      
+                 
+                 <button type="image"  id="eraser"  >
+                 <img src="{{url_for('static',filename='icons/eraser.png')}}" />
+                 </button>
+                 <button type="image"  id="rectangle"  >
+                 <img src="{{url_for('static',filename='icons/rectangle.png')}}" />
+                 </button>
+                 <button type=button  id="circle"  >
+                 <img src="{{url_for('static',filename='icons/circle.png')}}" />
+                 </button>
+                 <button type="image"  id="pencil"  >
+                 <img src="{{url_for('static',filename='icons/pencil.png')}}" />
+                 </button>
+                 <button type=button  id="line"  >
+                 <img src="{{url_for('static',filename='icons/line.png')}}" >
+                 </button>
+                 <button type=button  id="fill"  >
+                 <img src="{{url_for('static',filename='icons/fill.png')}}" >
+                 </button>
+                 <br>
+                 <br>
+                 <br>
+            
+              </div>
+              <div >
+                <br>
+                <input id="imagename" name="imagename">
+                <button type="button" class="btn btn-primary" id="save">SAVE</button>
+                <br> 
+              </div>
+
+            </div>
+
+
+            <div class="col-md-8"> 
+              <div >
+                <h1>Let's Paint...</h1>
+             
+                <div class="container">
+                    <canvas id="paint" width="650" height="420"></canvas>
+                </div>
+       
+
+              </div>
+            </div>
+              
+    
+            <div class="col-md-2"> 
+                 <div id="gallery" >
+                    <h2>GALLERY</h2>
+                    {% for post in posts %}
+                    <form method="post" >
+                    <input type=button  value={{post.title}} onclick="load(this.value,this.id)"style="width: 55px; height: 25px"><hr>
+                    
+                    {% endfor %}
+                    <script type="text/javascript">
+                    function load(cvalue){
+                        document.location.href='/gallery/'+cvalue;
+                    }
+                      </script>
+                  
+                    
+                 </div>
+            </div>
+              
+
+            
+          
+        </div><!-- closing of row div-->
+    </div><!-- closing of container div-->
+
+    <footer>
+        <div class="container">
+            <hr>
+            <p class="text-center">Copyright © J-s Paint App powered by bootstrap </p>
+        </div>
+    </footer-->
+</div>
+
+
+    <!-- Jquery and Bootstrap Script files -->
+
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename="paint.js") }}"></script>
+    <script src="{{ url_for('static', filename="jquery.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="bootstrap/js/bootstrap.min.js") }}"></script>
+   
+</body>
+</html>

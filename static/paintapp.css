@@ -1,0 +1,44 @@
+body {
+    margin-top: 55px;
+}        
+footer{
+	margin-top: 200px
+}
+
+ #container { position: relative; }
+ #paint { position: absolute;   border: 5px solid #000; }
+ #painttemp { position: absolute; border: 5px solid #000; }
+canvas {
+	border: 2px solid #333;
+
+}
+    
+#bg{
+    background:url('10.jpg') no-repeat center center;
+    background-size:100% auto;
+}
+
+#toolbox .padding {
+    padding-top: 45px;
+    padding-bottom: 215px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+#toolbox {
+    /*float: left;
+    width: 180px;
+    /*border: 2px solid black;*/
+    /*background-color: #EADCAE;*/
+   }
+/*#gallery {
+    padding: 10px 0;
+    width: 600px;
+    
+}
+#mycanvas{
+	background-color: #EADCAE;
+
+
+
+	style="background-color:transparent; border-color:transparent;"
+}*/
